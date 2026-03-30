@@ -1,0 +1,651 @@
+column_name,data_type,condition,default_value,enum_values,key_type
+student_id,char(36),mandatory,,,primary_key
+user_id,char(36),mandatory,,,foreign_key
+parent_id,char(36),mandatory,,,foreign_key
+name,varchar(255),mandatory,,,
+middle_name,varchar(255),optional,,,
+surname,varchar(255),mandatory,,,
+father_name,varchar(255),mandatory,,,
+mother_name,varchar(255),mandatory,,,
+contact_no,varchar(20),mandatory,,,
+email_id,varchar(255),optional,,,
+address,varchar(255),mandatory,,,
+zipcode,varchar(10),mandatory,,,
+district,varchar(100),mandatory,Nadia,,
+state,varchar(100),mandatory,West Bengal,,
+country,varchar(100),mandatory,India,,
+admission_status,enum,mandatory,,"not_started, started, in_review, accepted, rejected",
+admission_id,char(36),mandatory,,,foreign_key
+admission_application_date,datetime,mandatory,,,
+admission_date,date,mandatory,,,
+date_of_birth,date,mandatory,,,
+class_id,char(36),mandatory,,,foreign_key
+terms_and_conditions,enum,mandatory,,"accepted, rejected",
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+status,enum,optional,,"active, inactive",
+blood_group,varchar(10),optional,,,
+gender,enum,mandatory,,"male, female, others",
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+user_id,char(36),mandatory,,,primary_key
+password_hash,varchar(255),mandatory,,,
+role_id,char(36),mandatory,,,
+status,enum,mandatory,,"active, inactive",
+created_at,datetime,mandatory,,,
+updated_at,datetime,mandatory,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+role_id,char(36),mandatory,,,primary_key
+role,enum,mandatory,,"owner, admin, parent, teacher, driver",
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+id,char(36),mandatory,,,primary_key
+user_id,char(36),mandatory,,,foreign_key
+role_id,char(36),mandatory,,,foreign_key
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+parent_id,char(36),mandatory,,,primary_key
+user_id,char(36),mandatory,,,foreign_key
+name,varchar(255),mandatory,,,
+occupation,enum,mandatory,,"self_employed, govt_employee",
+relation_type,enum,mandatory,,"father, mother, guardian",
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+status,enum,mandatory,,"active, inactive",
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_values,enum_values,key_type
+class_id,char(36),mandatory,,,primary_key
+class_level,int,mandatory,,,
+class_teacher_id,char(36),mandatory,,,foreign_key
+room_no,int,mandatory,,,
+period_ids,json,mandatory,,,
+section,varchar(50),mandatory,,,
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+status,enum,mandatory,,"active, inactive",
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_values,enum_values,key_type
+period_id,char(36),mandatory,,,primary_key
+class_id,char(36),mandatory,,,foreign_key
+subject_id,char(36),mandatory,,,foreign_key
+teacher_id,char(36),mandatory,,,foreign_key
+start_time,time,mandatory,,,
+end_time,time,mandatory,,,
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+status,enum,optional,,"active, inactive",
+,,,,,
+,,,,,
+column_name,data_type,condition,default_values,enum_values,key_type
+subject_id,char(36),mandatory,,,primary_key
+name,varchar(255),mandatory,,,
+subject_group,enum,mandatory,,"science, arts, language, social",
+book_name,varchar(255),mandatory,,,
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+status,enum,optional,,"active, inactive",
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_values,enum_values,key_type
+teacher_id,char(36),mandatory,,,primary_key
+title,enum,mandatory,,"Mr, Mrs, Miss",
+name,varchar(255),mandatory,,,
+middle_name,varchar(255),optional,,,
+surname,varchar(255),mandatory,,,
+contact_no,varchar(20),mandatory,,,
+email_id,varchar(255),optional,,,
+address,varchar(255),mandatory,,,
+zipcode,varchar(10),mandatory,,,
+district,varchar(100),mandatory,Nadia,,
+state,varchar(100),mandatory,West Bengal,,
+country,varchar(100),mandatory,India,,
+date_of_birth,date,mandatory,,,
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+status,enum,mandatory,,"active, inactive",
+subject,varchar(255),mandatory,,,
+highest_qualification,varchar(255),mandatory,,,
+teacher_class_id,char(36),optional,,,foreign_key
+period_ids,json,mandatory,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+session_id,char(36),mandatory,,,primary_key
+class_id,char(36),mandatory,,,foreign_key
+section,varchar(50),mandatory,,,
+attendance_date,date,mandatory,,,
+period_no,int,mandatory,,,
+subject_id,char(36),optional,,,foreign_key
+teacher_id,char(36),mandatory,,,foreign_key
+status,enum,mandatory,active,"active, inactive",
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+student_attendance_id,char(36),mandatory,,,primary_key
+session_id,char(36),mandatory,,,foreign_key
+student_id,char(36),mandatory,,,foreign_key
+attendance_state,enum,mandatory,present,"present, absent, late, excused",
+in_time,time,optional,,,
+out_time,time,optional,,,
+remarks,varchar(500),optional,,,
+marked_by_user_id,char(36),mandatory,,,foreign_key
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+staff_attendance_id,char(36),mandatory,,,primary_key
+staff_id,char(36),mandatory,,,foreign_key
+attendance_date,date,mandatory,,,
+attendance_state,enum,mandatory,present,"present, absent, leave, half_day",
+in_time,time,optional,,,
+out_time,time,optional,,,
+remarks,varchar(500),optional,,,
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+fee_structure_id,char(36),mandatory,,,primary_key
+class_id,char(36),mandatory,,,foreign_key
+fee_type,enum,mandatory,,"tuition, admission, exam, transport, hostel, misc",
+frequency,enum,mandatory,monthly,"one_time, monthly, quarterly, annual",
+amount,"decimal(12,2)",mandatory,0,,
+late_fee_per_day,"decimal(12,2)",optional,0,,
+effective_from,date,mandatory,,,
+effective_to,date,optional,,,
+status,enum,mandatory,active,"active, inactive",
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+fee_assignment_id,char(36),mandatory,,,primary_key
+student_id,char(36),mandatory,,,foreign_key
+fee_structure_id,char(36),mandatory,,,foreign_key
+academic_year,varchar(20),mandatory,,,
+discount_type,enum,optional,none,"none, percentage, fixed",
+discount_value,"decimal(12,2)",optional,0,,
+status,enum,mandatory,active,"active, inactive",
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+invoice_id,char(36),mandatory,,,primary_key
+student_id,char(36),mandatory,,,foreign_key
+invoice_no,varchar(50),mandatory,,,unique_key
+invoice_date,date,mandatory,,,
+due_date,date,mandatory,,,
+subtotal,"decimal(12,2)",mandatory,0,,
+discount_total,"decimal(12,2)",mandatory,0,,
+late_fee_total,"decimal(12,2)",mandatory,0,,
+grand_total,"decimal(12,2)",mandatory,0,,
+paid_total,"decimal(12,2)",mandatory,0,,
+balance_total,"decimal(12,2)",mandatory,0,,
+invoice_status,enum,mandatory,draft,"draft, issued, partially_paid, paid, overdue, cancelled",
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+invoice_item_id,char(36),mandatory,,,primary_key
+invoice_id,char(36),mandatory,,,foreign_key
+fee_structure_id,char(36),mandatory,,,foreign_key
+description,varchar(255),mandatory,,,
+quantity,int,mandatory,1,,
+unit_amount,"decimal(12,2)",mandatory,0,,
+line_discount,"decimal(12,2)",optional,0,,
+line_total,"decimal(12,2)",mandatory,0,,
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+payment_id,char(36),mandatory,,,primary_key
+invoice_id,char(36),mandatory,,,foreign_key
+payment_ref_no,varchar(100),mandatory,,,unique_key
+payment_date,datetime,mandatory,,,
+payment_mode,enum,mandatory,cash,"cash, upi, card, bank_transfer, cheque",
+amount,"decimal(12,2)",mandatory,0,,
+received_by_user_id,char(36),mandatory,,,foreign_key
+payment_status,enum,mandatory,success,"pending, success, failed, reversed",
+notes,varchar(500),optional,,,
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+component_id,char(36),mandatory,,,primary_key
+component_name,varchar(100),mandatory,,,unique_key
+component_type,enum,mandatory,earning,"earning, deduction",
+calculation_mode,enum,mandatory,fixed,"fixed, percentage",
+default_value,"decimal(12,2)",optional,0,,
+status,enum,mandatory,active,"active, inactive",
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+salary_structure_id,char(36),mandatory,,,primary_key
+staff_id,char(36),mandatory,,,foreign_key
+component_id,char(36),mandatory,,,foreign_key
+value_type,enum,mandatory,fixed,"fixed, percentage",
+value_amount,"decimal(12,2)",mandatory,0,,
+effective_from,date,mandatory,,,
+effective_to,date,optional,,,
+status,enum,mandatory,active,"active, inactive",
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+payroll_run_id,char(36),mandatory,,,primary_key
+run_month,tinyint,mandatory,,,
+run_year,smallint,mandatory,,,
+run_date,date,mandatory,,,
+run_status,enum,mandatory,draft,"draft, processed, approved, posted",
+approved_by_user_id,char(36),optional,,,foreign_key
+approved_at,datetime,optional,,,
+notes,varchar(500),optional,,,
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+payslip_id,char(36),mandatory,,,primary_key
+payroll_run_id,char(36),mandatory,,,foreign_key
+staff_id,char(36),mandatory,,,foreign_key
+gross_salary,"decimal(12,2)",mandatory,0,,
+total_deduction,"decimal(12,2)",mandatory,0,,
+net_salary,"decimal(12,2)",mandatory,0,,
+payment_status,enum,mandatory,pending,"pending, paid, failed",
+payment_date,date,optional,,,
+transaction_ref,varchar(100),optional,,,
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+account_id,char(36),mandatory,,,primary_key
+account_code,varchar(30),mandatory,,,unique_key
+account_name,varchar(150),mandatory,,,
+account_type,enum,mandatory,asset,"asset, liability, equity, income, expense",
+parent_account_id,char(36),optional,,,foreign_key
+allow_manual_entry,tinyint,mandatory,1,,
+status,enum,mandatory,active,"active, inactive",
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+journal_id,char(36),mandatory,,,primary_key
+journal_no,varchar(50),mandatory,,,unique_key
+journal_date,date,mandatory,,,
+reference_type,enum,optional,manual,"manual, fee_payment, payroll, expense, adjustment",
+reference_id,char(36),optional,,,
+description,varchar(500),optional,,,
+journal_status,enum,mandatory,draft,"draft, posted, cancelled",
+created_by_user_id,char(36),mandatory,,,foreign_key
+posted_at,datetime,optional,,,
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+entry_id,char(36),mandatory,,,primary_key
+journal_id,char(36),mandatory,,,foreign_key
+account_id,char(36),mandatory,,,foreign_key
+entry_type,enum,mandatory,debit,"debit, credit",
+amount,"decimal(12,2)",mandatory,0,,
+line_description,varchar(255),optional,,,
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+admission_id,char(36),mandatory,,,primary_key
+student_id,char(36),mandatory,,,foreign_key
+application_no,varchar(50),mandatory,,,unique_key
+application_date,date,mandatory,,,
+review_status,enum,mandatory,not_started,"not_started, in_review, accepted, rejected",
+reviewed_by_user_id,char(36),optional,,,foreign_key
+reviewed_at,datetime,optional,,,
+remarks,varchar(500),optional,,,
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+status,enum,mandatory,active,"active, inactive",
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+vehicle_id,char(36),mandatory,,,primary_key
+vehicle_no,varchar(50),mandatory,,,unique_key
+registration_no,varchar(50),mandatory,,,unique_key
+model_name,varchar(100),optional,,,
+capacity,int,mandatory,0,,
+insurance_expiry_date,date,optional,,,
+fitness_expiry_date,date,optional,,,
+status,enum,mandatory,active,"active, inactive, maintenance",
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+route_id,char(36),mandatory,,,primary_key
+route_name,varchar(100),mandatory,,,unique_key
+shift,enum,mandatory,both,"morning, afternoon, both",
+start_location,varchar(255),optional,,,
+end_location,varchar(255),optional,,,
+status,enum,mandatory,active,"active, inactive",
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+stop_id,char(36),mandatory,,,primary_key
+route_id,char(36),mandatory,,,foreign_key
+stop_name,varchar(150),mandatory,,,
+sequence_no,int,mandatory,1,,
+pickup_time,time,optional,,,
+drop_time,time,optional,,,
+status,enum,mandatory,active,"active, inactive",
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+driver_vehicle_assignment_id,char(36),mandatory,,,primary_key
+driver_user_id,char(36),mandatory,,,foreign_key
+vehicle_id,char(36),mandatory,,,foreign_key
+route_id,char(36),mandatory,,,foreign_key
+academic_year,varchar(20),mandatory,,,
+effective_from,date,mandatory,,,
+effective_to,date,optional,,,
+status,enum,mandatory,active,"active, inactive",
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+student_transport_assignment_id,char(36),mandatory,,,primary_key
+student_id,char(36),mandatory,,,foreign_key
+route_id,char(36),mandatory,,,foreign_key
+stop_id,char(36),mandatory,,,foreign_key
+vehicle_id,char(36),mandatory,,,foreign_key
+driver_user_id,char(36),mandatory,,,foreign_key
+pickup_address,varchar(255),optional,,,
+drop_address,varchar(255),optional,,,
+pickup_note,varchar(500),optional,,,
+status,enum,mandatory,active,"active, inactive",
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+grading_scale_id,char(36),mandatory,,,primary_key
+grade_name,varchar(20),mandatory,,,
+min_percentage,"decimal(5,2)",mandatory,0,,
+max_percentage,"decimal(5,2)",mandatory,0,,
+grade_point,"decimal(4,2)",optional,0,,
+remarks,varchar(255),optional,,,
+status,enum,mandatory,active,"active, inactive",
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+assessment_id,char(36),mandatory,,,primary_key
+class_id,char(36),mandatory,,,foreign_key
+subject_id,char(36),mandatory,,,foreign_key
+teacher_id,char(36),mandatory,,,foreign_key
+assessment_type,enum,mandatory,exam,"exam, quiz, assignment, project",
+title,varchar(255),mandatory,,,
+max_marks,"decimal(7,2)",mandatory,0,,
+assessment_date,date,mandatory,,,
+status,enum,mandatory,scheduled,"scheduled, completed, cancelled",
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+result_id,char(36),mandatory,,,primary_key
+assessment_id,char(36),mandatory,,,foreign_key
+student_id,char(36),mandatory,,,foreign_key
+marks_obtained,"decimal(7,2)",mandatory,0,,
+percentage,"decimal(5,2)",optional,0,,
+grading_scale_id,char(36),optional,,,foreign_key
+remarks,varchar(500),optional,,,
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+assignment_id,char(36),mandatory,,,primary_key
+class_id,char(36),mandatory,,,foreign_key
+subject_id,char(36),mandatory,,,foreign_key
+teacher_id,char(36),mandatory,,,foreign_key
+title,varchar(255),mandatory,,,
+description,text,optional,,,
+assigned_date,date,mandatory,,,
+due_date,date,mandatory,,,
+max_marks,"decimal(7,2)",optional,0,,
+status,enum,mandatory,published,"draft, published, closed",
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+submission_id,char(36),mandatory,,,primary_key
+assignment_id,char(36),mandatory,,,foreign_key
+student_id,char(36),mandatory,,,foreign_key
+submitted_at,datetime,optional,,,
+submission_text,text,optional,,,
+attachment_url,varchar(500),optional,,,
+score,"decimal(7,2)",optional,0,,
+graded_by_teacher_id,char(36),optional,,,foreign_key
+graded_at,datetime,optional,,,
+feedback,varchar(500),optional,,,
+status,enum,mandatory,submitted,"submitted, graded, late, missing",
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+exam_id,char(36),mandatory,,,primary_key
+class_id,char(36),mandatory,,,foreign_key
+title,varchar(255),mandatory,,,
+exam_type,enum,mandatory,unit_test,"unit_test, mid_term, final, pre_board, olympiad",
+academic_year,varchar(20),mandatory,,,
+start_date,date,mandatory,,,
+end_date,date,mandatory,,,
+instructions,text,optional,,,
+status,enum,mandatory,scheduled,"scheduled, ongoing, completed, cancelled",
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+exam_schedule_id,char(36),mandatory,,,primary_key
+exam_id,char(36),mandatory,,,foreign_key
+subject_id,char(36),mandatory,,,foreign_key
+exam_date,date,mandatory,,,
+start_time,time,mandatory,,,
+end_time,time,mandatory,,,
+max_marks,"decimal(7,2)",mandatory,100,,
+pass_marks,"decimal(7,2)",mandatory,35,,
+room_no,varchar(50),optional,,,
+status,enum,mandatory,scheduled,"scheduled, completed, cancelled",
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+exam_mark_id,char(36),mandatory,,,primary_key
+exam_schedule_id,char(36),mandatory,,,foreign_key
+student_id,char(36),mandatory,,,foreign_key
+marks_obtained,"decimal(7,2)",mandatory,0,,
+is_absent,tinyint,mandatory,0,,
+grading_scale_id,char(36),optional,,,foreign_key
+percentage,"decimal(5,2)",optional,0,,
+remarks,varchar(500),optional,,,
+entered_by_user_id,char(36),mandatory,,,foreign_key
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+notification_id,char(36),mandatory,,,primary_key
+sender_user_id,char(36),mandatory,,,foreign_key
+title,varchar(255),mandatory,,,
+body,text,mandatory,,,
+notification_type,enum,mandatory,general,"general, fee, attendance, exam, transport, event",
+target_role,enum,optional,,"all, admin, teacher, parent, driver",
+is_broadcast,tinyint,mandatory,0,,
+scheduled_at,datetime,optional,,,
+status,enum,mandatory,sent,"draft, sent, cancelled",
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+recipient_id,char(36),mandatory,,,primary_key
+notification_id,char(36),mandatory,,,foreign_key
+user_id,char(36),mandatory,,,foreign_key
+is_read,tinyint,mandatory,0,,
+read_at,datetime,optional,,,
+created_at,datetime,mandatory,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+room_id,char(36),mandatory,,,primary_key
+room_name,varchar(150),optional,,,
+room_type,enum,mandatory,direct,"direct, group",
+created_by_user_id,char(36),mandatory,,,foreign_key
+last_message_at,datetime,optional,,,
+status,enum,mandatory,active,"active, archived",
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+chat_participant_id,char(36),mandatory,,,primary_key
+room_id,char(36),mandatory,,,foreign_key
+user_id,char(36),mandatory,,,foreign_key
+participant_role,enum,mandatory,member,"admin, teacher, parent, driver, member",
+joined_at,datetime,mandatory,,,
+last_read_at,datetime,optional,,,
+status,enum,mandatory,active,"active, removed, left",
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+message_id,char(36),mandatory,,,primary_key
+room_id,char(36),mandatory,,,foreign_key
+sender_user_id,char(36),mandatory,,,foreign_key
+message_type,enum,mandatory,text,"text, image, file, audio",
+message_text,text,optional,,,
+attachment_url,varchar(500),optional,,,
+is_deleted,tinyint,mandatory,0,,
+deleted_at,datetime,optional,,,
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+,,,,,
+,,,,,
+,,,,,
+column_name,data_type,condition,default_value,enum_values,key_type
+staff_id,char(36),mandatory,,,primary_key
+user_id,char(36),mandatory,,,foreign_key
+staff_code,varchar(50),mandatory,,,
+staff_type,enum,mandatory,,"teacher, admin, accountant, receptionist, librarian, nurse, driver, cleaner, security, clerk, other",
+department,varchar(100),optional,,,
+designation,varchar(100),mandatory,,,
+joining_date,date,mandatory,,,
+status,enum,mandatory,active,"active, inactive",
+created_at,datetime,mandatory,,,
+updated_at,datetime,optional,,,
+deleted_at,datetime,optional,,,
