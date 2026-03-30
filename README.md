@@ -73,6 +73,6 @@ If `/docs` does not load on Render:
 - Check deploy logs for build/runtime errors.
 - Ensure `API_KEY` is set in Render environment variables.
 - `/docs` should open without API key, but protected endpoints need
-	`X-API-Key` in Swagger "Authorize".
+  `X-API-Key` in Swagger "Authorize".
 
 The first boot creates `school.db` and seeds sample records automatically.
